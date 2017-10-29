@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private RecyclerAdapter mAdapter;
     private static List<Music> mList;
 
+    /**
+     * 模拟本地数据
+     */
     static {
         mList = new ArrayList<>();
 
@@ -116,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         ry.setLayoutManager(layoutManager);
         ry.addItemDecoration(new SpacesItemDecoration(2));
 
+        // 填充数据
         mAdapter = new RecyclerAdapter(this, mList);
         mAdapter.setOnItemClickListener(this);
         ry.setAdapter(mAdapter);
